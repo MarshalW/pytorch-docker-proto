@@ -1,0 +1,15 @@
+version: "3"
+
+# docker pull cnstark/pytorch:2.0.1-py3.10.11-ubuntu22.04
+networks:
+  pytorch:
+    name: pytorch
+services:
+  pytorch:
+    # image: cnstark/pytorch:2.0.1-py3.10.11-ubuntu22.04
+    build: .
+    container_name: pytorch
+    restart: always
+    networks:
+      - pytorch
+    tty: true
